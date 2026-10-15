@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="100%">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="primaryTextGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+    <linearGradient id="accentGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="pulseLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.1" />
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0.1" />
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    .bg-grid {
+      stroke: rgba(255, 255, 255, 0.04);
+      stroke-width: 1;
+    }
+    .data-wave {
+      fill: none;
+      stroke-width: 2.5;
+      stroke-dasharray: 8 6;
+      animation: waveFlow 15s linear infinite;
+    }
+    .radar-sweep {
+      transform-origin: 1050px 180px;
+      animation: rotateSweep 8s linear infinite;
+    }
+    .pulse-node {
+      animation: pulseNode 3s ease-in-out infinite alternate;
+    }
+    .stream-particle {
+      animation: streamFlow 4s ease-in-out infinite;
+    }
+    .pill-card {
+      transition: all 0.3s ease;
+    }
+    @keyframes waveFlow {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: 400; }
+    }
+    @keyframes rotateSweep {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes pulseNode {
+      0% { r: 4px; opacity: 0.4; }
+      100% { r: 8px; opacity: 0.95; }
+    }
+    @keyframes streamFlow {
+      0% { transform: translateY(0); opacity: 0.2; }
+      50% { opacity: 0.8; }
+      100% { transform: translateY(-40px); opacity: 0.1; }
+    }
+  </style>
+
+  <!-- Background -->
+  <rect width="1200" height="360" rx="16" fill="url(#bgGrad)" />
+
+  <!-- Animated Background Grid (Behind Everything) -->
+  <g class="bg-grid">
+    <line x1="0" y1="60" x2="1200" y2="60" />
+    <line x1="0" y1="120" x2="1200" y2="120" />
+    <line x1="0" y1="180" x2="1200" y2="180" />
+    <line x1="0" y1="240" x2="1200" y2="240" />
+    <line x1="0" y1="300" x2="1200" y2="300" />
+    <line x1="200" y1="0" x2="200" y2="360" />
+    <line x1="400" y1="0" x2="400" y2="360" />
+    <line x1="600" y1="0" x2="600" y2="360" />
+    <line x1="800" y1="0" x2="800" y2="360" />
+    <line x1="1000" y1="0" x2="1000" y2="360" />
+  </g>
+
+  <!-- Dynamic Animated Graph & Waves in Background -->
+  <g opacity="0.35">
+    <path class="data-wave" stroke="#38bdf8" d="M 0 280 Q 300 210, 600 270 T 1200 230" />
+    <path class="data-wave" stroke="#818cf8" d="M 0 310 Q 350 240, 700 300 T 1200 260" style="animation-duration: 20s; animation-direction: reverse;" />
+    <path class="data-wave" stroke="#c084fc" d="M 0 250 Q 250 320, 500 230 T 1200 290" style="animation-duration: 12s;" />
+  </g>
+
+  <!-- Dynamic Radar Scanner (Positioned Right, subtle behind content) -->
+  <g opacity="0.25">
+    <circle cx="1060" cy="180" r="110" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="4 4" />
+    <circle cx="1060" cy="180" r="70" fill="none" stroke="#818cf8" stroke-width="1" />
+    <circle cx="1060" cy="180" r="30" fill="none" stroke="#c084fc" stroke-width="1" />
+    <line class="radar-sweep" x1="1060" y1="180" x2="1170" y2="180" stroke="#38bdf8" stroke-width="2.5" opacity="0.8" />
+  </g>
+
+  <!-- Left Side Glowing Floating Nodes (Background) -->
+  <g opacity="0.3">
+    <circle class="pulse-node" cx="80" cy="100" r="6" fill="#38bdf8" filter="url(#glow)" />
+    <circle class="pulse-node" cx="130" cy="270" r="5" fill="#818cf8" filter="url(#glow)" style="animation-delay: 1s;" />
+    <circle class="pulse-node" cx="1120" cy="80" r="7" fill="#c084fc" filter="url(#glow)" style="animation-delay: 1.5s;" />
+  </g>
+
+  <!-- High-Z Foreground Group: Clear Title & Subtitle Unobstructed -->
+  <g id="foreground-content">
+    <!-- Super Header Badge -->
+    <g transform="translate(80, 52)">
+      <rect width="280" height="30" rx="15" fill="#1e293b" stroke="#334155" stroke-width="1.2" />
+      <circle cx="18" cy="15" r="5" fill="#22c55e">
+        <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite" />
+      </circle>
+      <text x="32" y="20" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0.8">PRODUCTION OBSERVABILITY</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="80" y="130" fill="url(#primaryTextGrad)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="44" font-weight="800" letter-spacing="-0.5" filter="url(#glow)">Awesome AI Observability</text>
+    <text x="80" y="180" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="40" font-weight="700" letter-spacing="-0.5">&amp; Evaluation</text>
+
+    <!-- Subtitle / Tagline -->
+    <text x="80" y="224" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" font-weight="400">
+      Enterprise SaaS Platforms, OpenTelemetry Tracing, automated LLM Judges &amp; Open-Source Frameworks
+    </text>
+
+    <!-- Feature Pills / Badges in Foreground -->
+    <g transform="translate(80, 260)">
+      <!-- Pill 1: LLM Tracing -->
+      <g class="pill-card">
+        <rect width="140" height="36" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2" />
+        <text x="18" y="23" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600">🔍 LLM Tracing</text>
+      </g>
+      <!-- Pill 2: Agent Evals -->
+      <g class="pill-card" transform="translate(155, 0)">
+        <rect width="145" height="36" rx="8" fill="#1e293b" stroke="#818cf8" stroke-width="1.2" />
+        <text x="18" y="23" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600">⚡ Agent Evals</text>
+      </g>
+      <!-- Pill 3: OpenTelemetry -->
+      <g class="pill-card" transform="translate(315, 0)">
+        <rect width="165" height="36" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1.2" />
+        <text x="18" y="23" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600">📡 OpenTelemetry</text>
+      </g>
+      <!-- Pill 4: Guardrails & Safety -->
+      <g class="pill-card" transform="translate(495, 0)">
+        <rect width="175" height="36" rx="8" fill="#1e293b" stroke="#ec4899" stroke-width="1.2" />
+        <text x="18" y="23" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600">🛡️ Guardrails &amp; Safety</text>
+      </g>
+    </g>
+  </g>
+</svg>
