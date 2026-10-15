@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a><a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
-  <a href="https://github.com/ishandutta2007/Awesome-AI-Observability-Evaluation/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-AI-Observability-Evaluation?style=social" alt="GitHub Stars" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-AI-Observability-Evaluation/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-AI-Observability-Evaluation?style=social" alt="GitHub_Stars" /></a>
   <a href="https://github.com/ishandutta2007/Awesome-AI-Observability-Evaluation/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-AI-Observability-Evaluation?style=social" alt="GitHub Forks" /></a>
   <a href="https://github.com/ishandutta2007/Awesome-AI-Observability-Evaluation/issues"><img src="https://img.shields.io/github/issues/ishandutta2007/Awesome-AI-Observability-Evaluation" alt="GitHub Issues" /></a>
   <a href="https://github.com/ishandutta2007/Awesome-AI-Observability-Evaluation/blob/main/LICENSE"><img src="https://img.shields.io/github/license/ishandutta2007/Awesome-AI-Observability-Evaluation" alt="License" /></a>
@@ -66,11 +66,11 @@ The table below catalogs premier hosted AI evaluation and observability platform
 
 ## 💻 Open-Source GitHub Projects
 
-The open-source ecosystem provides transparent, vendor-neutral, and self-hosted AI observability. The list is sorted descending by GitHub star count.
+The open-source ecosystem provides transparent, vendor-neutral, and self-hosted AI observability. The list is sorted descending by GitHub Stars_Count.
 
 ### 🏆 High-Star Evaluation & Observability Frameworks
 
-| Project | GitHub Stars | License | Description & Architectural Highlights |
+| Project | GitHub_Stars | License | Description & Architectural Highlights |
 | :--- | :--- | :--- | :--- |
 | **[Langfuse](https://github.com/langfuse/langfuse)** | [![Stars](https://img.shields.io/github/stars/langfuse/langfuse?style=social&color=white)](https://github.com/langfuse/langfuse/stargazers) | MIT Core / FSL | **Complete Open-Source LLM Engineering & Tracing Platform**. Provides detailed span execution trees, automated eval judges, prompt versioning, playground, and cost tracking. Self-hostable via Docker/Kubernetes with ClickHouse backend. |
 | **[Promptfoo](https://github.com/promptfoo/promptfoo)** | [![Stars](https://img.shields.io/github/stars/promptfoo/promptfoo?style=social&color=white)](https://github.com/promptfoo/promptfoo/stargazers) | MIT | **Lightweight Test & Red-Teaming CLI Framework**. Specialized in CI/CD automated grading, prompt injection defense testing, output quality regression assertions, and multi-model benchmarking. Fast, deterministic, and offline-capable. |
