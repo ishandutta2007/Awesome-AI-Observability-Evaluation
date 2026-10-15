@@ -66,7 +66,7 @@ The table below catalogs premier hosted AI evaluation and observability platform
 
 ## 💻 Open-Source GitHub Projects
 
-The open-source ecosystem provides transparent, vendor-neutral, and self-hosted AI observability. The list is sorted descending by GitHub Stars_Count.
+The open-source ecosystem provides transparent, vendor-neutral, and self-hosted AI observability. The list is sorted descending by GitHub_Stars_Count.
 
 ### 🏆 High-Star Evaluation & Observability Frameworks
 
